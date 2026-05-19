@@ -1,67 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="631.0" prefWidth="1100.0" style="-fx-background-color: #F4F7FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.SessionScheduleController">
+<AnchorPane prefHeight="680.0" prefWidth="1160.0" style="-fx-background-color: #F8FAFC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.SessionScheduleController">
     <children>
-        <Label layoutX="40.0" layoutY="15.0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2D3436;" text="Session Schedules" />
-        <AnchorPane layoutX="40.0" layoutY="65.0" prefWidth="480.0" prefHeight="470.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
-            <children>
-                <GridPane hgap="15" vgap="12" layoutX="20" layoutY="20">
-                    <columnConstraints>
-                        <ColumnConstraints prefWidth="120.0" />
-                        <ColumnConstraints prefWidth="300.0" />
-                    </columnConstraints>
-                    <children>
-                        <Label text="Schedule ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                        <TextField fx:id="txtScheduleId" promptText="Enter Schedule ID" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                        
-                        <Label text="Patient ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                        <ComboBox fx:id="cmbPatientId" prefWidth="300.0" promptText="Select Patient" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        
-                        <Label fx:id="lblPatientDetails" text="..." style="-fx-text-fill: #6C63FF; -fx-font-size: 13px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-                        <Label text="Program ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                        <ComboBox fx:id="cmbProgramId" prefWidth="300.0" promptText="Select Program" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        
-                        <!-- Details Label for Program -->
-                        <Label fx:id="lblProgramDetails" text="..." style="-fx-text-fill: #6C63FF; -fx-font-size: 13px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                        
-                        <Label text="Therapist ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-                        <ComboBox fx:id="cmbTherapistId" prefWidth="300.0" promptText="Select Therapist" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        
-                        <!-- Details Label for Therapist -->
-                        <Label fx:id="lblTherapistDetails" text="..." style="-fx-text-fill: #6C63FF; -fx-font-size: 13px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-                        
-                        <Label text="Date" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
-                        <DatePicker fx:id="datePicker" prefWidth="300.0" promptText="Select Date" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        
-                        <Label text="Time" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
-                        <TextField fx:id="txtTime" promptText="HH:MM AM/PM" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <VBox layoutX="40.0" layoutY="30.0" spacing="4.0">
+            <children>
+                <Label style="-fx-font-size: 28px; -fx-font-weight: 800; -fx-text-fill: #112e70; -fx-letter-spacing: -0.5px;" text="Session Schedules" />
+                <Label style="-fx-font-size: 14px; -fx-text-fill: #64748B;" text="Plan, assign, and track therapy sessions for patients with specific therapists." />
+            </children>
+        </VBox>
+
+
+        <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="530.0" prefWidth="490.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #E2E8F0; -fx-border-width: 1; -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 12, 0, 0, 4);">
+            <children>
+                <ScrollPane hbarPolicy="NEVER" layoutX="20.0" layoutY="20.0" prefHeight="425.0" prefWidth="450.0" style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0;">
+                    <content>
+                        <GridPane hgap="15" vgap="12.0" style="-fx-background-color: white;">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="110.0" />
+                                <ColumnConstraints prefWidth="310.0" />
+                            </columnConstraints>
+                            <children>
+
+                                <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Schedule ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="txtScheduleId" promptText="e.g. SCH-001" style="-fx-background-color: #F1F5F9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E2E8F0; -fx-border-width: 1; -fx-padding: 9; -fx-text-fill: #0F172A; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+
+                                <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Patient ID" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="cmbPatientId" prefHeight="38.0" prefWidth="310.0" promptText="Select Patient" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-border-width: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label fx:id="lblPatientDetails" text="No patient selected" style="-fx-text-fill: #6366F1; -fx-font-size: 12px; -fx-font-weight: 600;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+                                <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Program ID" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <ComboBox fx:id="cmbProgramId" prefHeight="38.0" prefWidth="310.0" promptText="Select Program" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-border-width: 1;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+                                <Label fx:id="lblProgramDetails" text="No program selected" style="-fx-text-fill: #6366F1; -fx-font-size: 12px; -fx-font-weight: 600;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+
+                                <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Therapist ID" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                                <ComboBox fx:id="cmbTherapistId" prefHeight="38.0" prefWidth="310.0" promptText="Select Therapist" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-border-width: 1;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+
+                                <Label fx:id="lblTherapistDetails" text="No therapist selected" style="-fx-text-fill: #6366F1; -fx-font-size: 12px; -fx-font-weight: 600;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+
+                                <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Date" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                                <DatePicker fx:id="datePicker" prefHeight="38.0" prefWidth="310.0" promptText="Select Date" style="-fx-background-color: #FFFFFF; -fx-border-color: #CBD5E1; -fx-border-radius: 8; -fx-background-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+
+                                <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Time" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                                <TextField fx:id="txtTime" promptText="e.g. 10:30 AM" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-border-width: 1; -fx-padding: 9; -fx-text-fill: #0F172A;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            </children>
+                            <rowConstraints>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                            </rowConstraints>
+                        </GridPane>
+                    </content>
+                </ScrollPane>
+
+
+                <HBox layoutX="24.0" layoutY="465.0" spacing="12.0">
+                    <children>
+                        <Button fx:id="btnSave" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #6366F1; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(99, 102, 241, 0.2), 6, 0, 0, 2);" text="Save" />
+                        <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #0EA5E9; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.2), 6, 0, 0, 2);" text="Update" />
+                        <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.15), 6, 0, 0, 2);" text="Delete" />
+                        <Button fx:id="btnClear" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #F1F5F9; -fx-text-fill: #64748B; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-border-radius: 8; -fx-border-color: #E2E8F0; -fx-cursor: hand;" text="Clear" />
                     </children>
-                </GridPane>
+                </HBox>
             </children>
         </AnchorPane>
-        
-        <HBox layoutX="40.0" layoutY="555.0" spacing="15.0">
-            <children>
-                <Button fx:id="btnSave" onAction="#btnSaveOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Save" />
-                <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #00CEC9; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Update" />
-                <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #FF7675; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Delete" />
-                <Button fx:id="btnClear" onAction="#btnClearOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #B2BEC3; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Clear" />
-            </children>
-        </HBox>
-        
-        <TableView fx:id="tblSchedules" layoutX="540.0" layoutY="65.0" prefHeight="520.0" prefWidth="520.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+
+
+        <TableView fx:id="tblSchedules" layoutX="555.0" layoutY="110.0" prefHeight="530.0" prefWidth="565.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #E2E8F0; -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 12, 0, 0, 4); -fx-padding: 6;">
             <columns>
-                <TableColumn fx:id="colId" prefWidth="80.0" text="Schedule" />
-                <TableColumn fx:id="colPatientId" prefWidth="90.0" text="Patient" />
-                <TableColumn fx:id="colProgramId" prefWidth="90.0" text="Program" />
-                <TableColumn fx:id="colTherapistId" prefWidth="90.0" text="Therapist" />
-                <TableColumn fx:id="colDate" prefWidth="90.0" text="Date" />
-                <TableColumn fx:id="colTime" prefWidth="80.0" text="Time" />
+                <TableColumn fx:id="colId" prefWidth="85.0" style="-fx-alignment: CENTER;" text="Schedule ID" />
+                <TableColumn fx:id="colPatientId" prefWidth="95.0" style="-fx-alignment: CENTER;" text="Patient ID" />
+                <TableColumn fx:id="colProgramId" prefWidth="95.0" style="-fx-alignment: CENTER;" text="Program ID" />
+                <TableColumn fx:id="colTherapistId" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Therapist ID" />
+                <TableColumn fx:id="colDate" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Date" />
+                <TableColumn fx:id="colTime" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Time" />
             </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
         </TableView>
     </children>
 </AnchorPane>
