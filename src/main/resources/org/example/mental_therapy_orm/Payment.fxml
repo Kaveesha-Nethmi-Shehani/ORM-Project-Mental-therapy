@@ -1,55 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="631.0" prefWidth="1100.0" style="-fx-background-color: #F4F7FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.PaymentController">
+<AnchorPane prefHeight="680.0" prefWidth="1160.0" style="-fx-background-color: #F8FAFC;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.PaymentController">
     <children>
-        <Label layoutX="40.0" layoutY="30.0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2D3436;" text="Payment Processing" />
-        
-        <AnchorPane layoutX="40.0" layoutY="90.0" prefWidth="480.0" prefHeight="300.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+
+        <VBox layoutX="40.0" layoutY="30.0" spacing="4.0">
             <children>
-                <GridPane hgap="15" vgap="15" layoutX="20" layoutY="20">
+                <Label style="-fx-font-size: 28px; -fx-font-weight: 800; -fx-text-fill: #0F172A; -fx-letter-spacing: -0.5px;" text="Payment Processing" />
+                <Label style="-fx-font-size: 14px; -fx-text-fill: #64748B;" text="Manage financial transactions, process patient invoices, and view payment histories." />
+            </children>
+        </VBox>
+
+        <AnchorPane layoutX="40.0" layoutY="110.0" prefHeight="530.0" prefWidth="490.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #E2E8F0; -fx-border-width: 1; -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 12, 0, 0, 4);">
+            <children>
+                <GridPane hgap="15" layoutX="24.0" layoutY="24.0" vgap="16.0">
                     <columnConstraints>
-                        <ColumnConstraints prefWidth="120.0" />
-                        <ColumnConstraints prefWidth="300.0" />
+                        <ColumnConstraints prefWidth="110.0" />
+                        <ColumnConstraints prefWidth="315.0" />
                     </columnConstraints>
                     <children>
-                        <Label text="Payment ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                        <TextField fx:id="txtPaymentId" promptText="Enter Payment ID" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                        
-                        <Label text="Patient ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                        <ComboBox fx:id="cmbPatientId" prefWidth="300.0" promptText="Select Patient" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        
-                        <!-- Details Label for Patient -->
-                        <Label fx:id="lblPatientDetails" text="..." style="-fx-text-fill: #6C63FF; -fx-font-size: 13px; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                        
-                        <Label text="Amount" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                        <TextField fx:id="txtAmount" promptText="E.g. 50.00" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        
-                        <Label text="Payment Date" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                        <DatePicker fx:id="datePicker" prefWidth="300.0" promptText="Select Date" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                        <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Payment ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtPaymentId" promptText="e.g. PYMT-001" style="-fx-background-color: #F1F5F9; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #E2E8F0; -fx-border-width: 1; -fx-padding: 10; -fx-text-fill: #0F172A; -fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+
+                        <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Patient" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cmbPatientId" prefHeight="38.0" prefWidth="315.0" promptText="Select Patient" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-border-width: 1; -fx-padding: 2 5 2 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+
+                        <Label fx:id="lblPatientDetails" text="No patient selected" style="-fx-text-fill: #6366F1; -fx-font-size: 12px; -fx-font-weight: 600;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+                        <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Amount (LKR)" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtAmount" promptText="Enter amount (e.g. 1500.00)" style="-fx-background-color: #FFFFFF; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CBD5E1; -fx-border-width: 1; -fx-padding: 10; -fx-text-fill: #0F172A;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+                        <Label style="-fx-font-weight: 700; -fx-text-fill: #475569; -fx-font-size: 13px;" text="Payment Date" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="datePicker" prefHeight="38.0" prefWidth="315.0" promptText="Select Date" style="-fx-background-color: #FFFFFF; -fx-border-color: #CBD5E1; -fx-border-radius: 8; -fx-background-radius: 8;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
                 </GridPane>
+
+                <HBox layoutX="24.0" layoutY="465.0" spacing="12.0">
+                    <children>
+                        <Button fx:id="btnSave" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #6366F1; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(99, 102, 241, 0.2), 6, 0, 0, 2);" text="Save" />
+                        <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #0EA5E9; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(14, 165, 233, 0.2), 6, 0, 0, 2);" text="Update" />
+                        <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #EF4444; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.15), 6, 0, 0, 2);" text="Delete" />
+                        <Button fx:id="btnClear" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="105.0" style="-fx-background-color: #F1F5F9; -fx-text-fill: #64748B; -fx-background-radius: 8; -fx-font-weight: bold; -fx-font-size: 13px; -fx-border-radius: 8; -fx-border-color: #E2E8F0; -fx-cursor: hand;" text="Clear" />
+                    </children>
+                </HBox>
             </children>
         </AnchorPane>
-        
-        <HBox layoutX="40.0" layoutY="420.0" spacing="15.0">
-            <children>
-                <Button fx:id="btnSave" onAction="#btnSaveOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Save" />
-                <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #00CEC9; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Update" />
-                <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #FF7675; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Delete" />
-                <Button fx:id="btnClear" onAction="#btnClearOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #B2BEC3; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Clear" />
-            </children>
-        </HBox>
-        
-        <TableView fx:id="tblPayments" layoutX="540.0" layoutY="90.0" prefHeight="500.0" prefWidth="520.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+
+
+        <TableView fx:id="tblPayments" layoutX="555.0" layoutY="110.0" prefHeight="530.0" prefWidth="565.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #E2E8F0; -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 12, 0, 0, 4); -fx-padding: 6;">
             <columns>
-                <TableColumn fx:id="colId" prefWidth="100.0" text="Payment ID" />
-                <TableColumn fx:id="colPatientId" prefWidth="130.0" text="Patient ID" />
-                <TableColumn fx:id="colAmount" prefWidth="130.0" text="Amount (LKR)" />
-                <TableColumn fx:id="colDate" prefWidth="158.0" text="Date" />
+                <TableColumn fx:id="colId" prefWidth="90.0" style="-fx-alignment: CENTER;" text="Payment ID" />
+                <TableColumn fx:id="colPatientId" prefWidth="110.0" style="-fx-alignment: CENTER;" text="Patient ID" />
+                <TableColumn fx:id="colAmount" prefWidth="150.0" style="-fx-alignment: CENTER_RIGHT; -fx-padding: 0 10 0 0;" text="Amount (LKR)" />
+                <TableColumn fx:id="colDate" prefWidth="195.0" style="-fx-alignment: CENTER;" text="Transaction Date" />
             </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
         </TableView>
     </children>
 </AnchorPane>
