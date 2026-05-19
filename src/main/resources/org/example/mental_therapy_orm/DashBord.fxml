@@ -6,7 +6,7 @@
 
 <BorderPane prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.DashBoardController">
     <left>
-        <VBox prefHeight="700.0" prefWidth="250.0" spacing="10.0" style="-fx-background-color:#1E272E; -fx-padding:30 15 30 15;">
+        <VBox prefHeight="700.0" prefWidth="250.0" spacing="10.0" style="-fx-background-color:linear-gradient(to bottom right, #050133, #7972ea); -fx-padding:30 15 30 15;">
             <children>
                 <Label text="SERENITY" textFill="WHITE">
                     <font>
@@ -22,7 +22,7 @@
                 <Button fx:id="btnSessions" onAction="#btnSessionsOnAction" prefWidth="220.0" prefHeight="45.0" style="-fx-background-radius: 8; -fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-alignment: center-left; -fx-padding: 0 0 0 20;" text="Sessions" />
                 <Button fx:id="btnPayments" onAction="#btnPaymentsOnAction" prefWidth="220.0" prefHeight="45.0" style="-fx-background-radius: 8; -fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-alignment: center-left; -fx-padding: 0 0 0 20;" text="Payments" />
                 <Region VBox.vgrow="ALWAYS"/>
-                <Button fx:id="btnLogout" onAction="#btnLogoutOnAction" prefWidth="220.0" prefHeight="45.0" style="-fx-background-radius: 8; -fx-background-color: #FF4757; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" text="Logout" />
+                <Button fx:id="btnLogout" onAction="#btnLogoutOnAction" prefWidth="220.0" prefHeight="45.0" style="-fx-background-radius: 8; -fx-background-color: #070347; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" text="Logout" />
             </children>
         </VBox>
     </left>
@@ -30,3 +30,5 @@
         <AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color:#F4F7FA;" />
     </center>
 </BorderPane>
+
+
