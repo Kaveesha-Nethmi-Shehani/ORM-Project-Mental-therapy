@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database Connection Settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/nethmiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">mysql</property> <!-- Change to user's DB password if needed -->
+
+        <!-- JDBC Connection Pool -->
+        <property name="connection.pool_size">10</property>
+
+        <!-- SQL Dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Second Level Cache Configuration -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+
+        <!-- Entity Mappings -->
+        <mapping class="org.example.mental_therapy_orm.entity.Patient" />
+        <mapping class="org.example.mental_therapy_orm.entity.Therapist" />
+        <mapping class="org.example.mental_therapy_orm.entity.Payment" />
+        <mapping class="org.example.mental_therapy_orm.entity.User" />
+        <mapping class="org.example.mental_therapy_orm.entity.TherapyProgram" />
+        <mapping class="org.example.mental_therapy_orm.entity.SessionSchedule" />
+
+    </session-factory>
+</hibernate-configuration>

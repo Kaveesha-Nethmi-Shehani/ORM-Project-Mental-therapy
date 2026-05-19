@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #F4F7FA;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.LoginFormController">
+    <children>
+        <Pane prefHeight="1000.0" prefWidth="350.0" style="-fx-background-color:linear-gradient(to right, #6C63FF, #8E7CFF);">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="100.0" layoutY="70.0" preserveRatio="true">
+                    <image>
+                        <Image url="@assets/Health_care.png" />
+                    </image>
+                </ImageView>
+                
+                <Label layoutX="40.0" layoutY="250.0" style="-fx-font-weight: bold;" text="Serenity Therapy Center" textFill="WHITE">
+                    <font>
+                        <Font size="26.0" />
+                    </font>
+                </Label>
+                <Label layoutX="90.0" layoutY="290.0" text="Mental Health System" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+
+        <AnchorPane layoutX="425.0" layoutY="65.0" prefHeight="431.0" prefWidth="619.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+            <children>
+                <VBox layoutX="35.0" layoutY="35.0" prefHeight="399.0" prefWidth="500.0" spacing="20.0">
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #2D3436;" text="LOGIN">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+
+                        <TextField fx:id="txtUsername" prefHeight="40.0" prefWidth="485.0" promptText="Username" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 10;" />
+
+                        <PasswordField fx:id="txtPassword" prefHeight="40.0" prefWidth="455.0" promptText="Password" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 10;" />
+
+                        <CheckBox fx:id="chkShowPassword" style="-fx-text-fill: #636E72;" text="Show Password" />
+
+                        <ComboBox fx:id="cmbRole" prefWidth="280.0" promptText="Select Role" style="-fx-background-color: white; -fx-border-color: #DFE6E9; -fx-border-radius: 8; -fx-padding: 2;" />
+
+                        <Button fx:id="btnLogin" onAction="#btnLoginOnAction" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold; -fx-font-size: 14px;" text="LOGIN" />
+
+                        <Hyperlink style="-fx-text-fill: #6C63FF;" text="Change Username / Password" />
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

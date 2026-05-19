@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="631.0" prefWidth="1100.0" style="-fx-background-color: #F4F7FA;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mental_therapy_orm.controller.TherapistsController">
+    <children>
+        <Label layoutX="40.0" layoutY="30.0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2D3436;" text="Therapist Management" />
+        
+        <AnchorPane layoutX="40.0" layoutY="90.0" prefWidth="480.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+            <children>
+                <GridPane hgap="15" vgap="25" layoutX="20" layoutY="30">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="120.0" />
+                        <ColumnConstraints prefWidth="300.0" />
+                    </columnConstraints>
+                    <children>
+                        <Label text="Therapist ID" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="txtTherapistId" promptText="Enter Therapist ID" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        
+                        <Label text="Full Name" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtName" promptText="Enter Full Name" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        
+                        <Label text="Specialization" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <TextField fx:id="txtSpecialization" promptText="E.g. Psychologist" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        
+                        <Label text="Phone" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="txtPhone" promptText="Enter Phone Number" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        
+                        <Label text="Email" style="-fx-font-weight: bold; -fx-text-fill: #636E72;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        <TextField fx:id="txtEmail" promptText="Enter Email" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #DFE6E9; -fx-padding: 8;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+        
+        <HBox layoutX="40.0" layoutY="450.0" spacing="15.0">
+            <children>
+                <Button fx:id="btnSave" onAction="#btnSaveOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #6C63FF; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Save" />
+                <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #00CEC9; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Update" />
+                <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #FF7675; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Delete" />
+                <Button fx:id="btnClear" onAction="#btnClearOnAction" prefWidth="110.0" prefHeight="40.0" style="-fx-background-color: #B2BEC3; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="Clear" />
+            </children>
+        </HBox>
+        
+        <TableView fx:id="tblTherapists" layoutX="540.0" layoutY="90.0" prefHeight="500.0" prefWidth="520.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="80.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="140.0" text="Name" />
+                <TableColumn fx:id="colSpecialization" prefWidth="120.0" text="Specialty" />
+                <TableColumn fx:id="colPhone" prefWidth="178.0" text="Phone" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
